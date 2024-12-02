@@ -1,16 +1,24 @@
 plugins {
+    kotlin("jvm") version "2.0.20"
     application
-    id("common")
     id("com.github.johnrengelman.shadow") version "8.1.1"
+}
+
+repositories {
+    mavenCentral()
+    maven { setUrl("https://jitpack.io") }
 }
 
 group = "com.expedia.levelup"
 version = "1.0-SNAPSHOT"
 
 dependencies {
-    implementation(project(":spi"))
-    implementation(project(":3rd-party-plugins"))
+    implementation(kotlin("stdlib"))
     implementation("com.github.kotlin-inquirer:kotlin-inquirer:0.1.0")
+}
+
+kotlin {
+    jvmToolchain(21)
 }
 
 application {
