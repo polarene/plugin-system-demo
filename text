@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 #set -x
 ./gradlew build --quiet
-java -jar application/build/libs/txt.jar "$1"
+java -jar application/build/libs/txt.jar "$@"
