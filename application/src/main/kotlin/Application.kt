@@ -8,9 +8,9 @@ import java.util.ServiceLoader
 
 fun main(args: Array<String>) {
     if (args.isEmpty()) {
-        println("Usage: text <text>")
+        println("Usage: text <text>\n")
         println("You can pass a text including spaces, " +
-            "but if there are special characters, you should quote it.")
+            "but if there are special characters interpreted by shell, you must quote it.")
         return
     }
     val text = args.joinToString(" ")
