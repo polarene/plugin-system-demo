@@ -16,9 +16,9 @@ fun main(args: Array<String>) {
         return
     }
     val text = args.joinToString(" ")
-    val plugins =
-        (listOf(EchoPlugin()) + ServiceLoader.load(TextPlugin::class.java))
-            .associateBy { it.name }
+    val builtInPlugins = listOf(EchoPlugin())
+    val plugins = (builtInPlugins + ServiceLoader.load(TextPlugin::class.java))
+        .associateBy { it.name }
     val selected = KInquirer.promptList(
         message = "Which plugin do you want to apply?",
         choices = plugins.keys.toList()
